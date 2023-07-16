@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-war
+  namespace: mikha-kube
+  labels:
+     app: hello-world-war
+spec:
+  replicas: 1
+  selector:
+      matchLabels:
+              app: hello-world-war
+  template:
+    metadata:
+	  namespace: mikha-kube
+      labels:
+        app: hello-world-war
+    spec:
+     imagePullSecrets:
+        - name: regcred-mikha
+     containers:
+        - name: hello-world-war
+          image: 404197691421.dkr.ecr.us-east-1.amazonaws.com/helloworldwar:latest
+          imagePullPolicy: Never
+          ports:
+          - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-service
+  namespace: mikha-kube
+spec:
+  ports:
+  - port: 8080
+    nodePort: 30000
+  selector:
+    app: hello-world-war
+  type: NodePort
