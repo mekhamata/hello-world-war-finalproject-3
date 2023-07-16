@@ -12,7 +12,6 @@ spec:
               app: hello-world-war
   template:
     metadata:
-	  namespace: mikha-kube
       labels:
         app: hello-world-war
     spec:
