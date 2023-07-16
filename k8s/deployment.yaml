@@ -15,8 +15,8 @@ spec:
       labels:
         app: hello-world-war
     spec:
-     imagePullSecrets:
-        - name: regcred-mikha
+     # imagePullSecrets:
+     #    - name: regcred-mikha
      containers:
         - name: hello-world-war
           image: helloworldwar:latest
