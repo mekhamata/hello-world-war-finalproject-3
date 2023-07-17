@@ -20,7 +20,7 @@ spec:
      containers:
         - name: hello-world-war
           image: helloworldwar:latest
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 8080
 ---
