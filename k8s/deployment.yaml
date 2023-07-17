@@ -19,7 +19,7 @@ spec:
      #    - name: regcred-mikha
      containers:
         - name: hello-world-war
-          image: helloworldwar:latest
+          image: 404197691421.dkr.ecr.us-east-1.amazonaws.com/helloworldwar:latest
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 8080
